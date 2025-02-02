@@ -1,0 +1,166 @@
+:root {
+    --primary-color: rgba(74, 144, 226, 0.9);
+    --accent-color: rgba(249, 10, 57, 0.8);
+    --text-color: rgba(51, 51, 51, 0.9);
+    --bg-color: rgba(0, 0, 0, 0.7);
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: var(--bg-color);
+    overflow: hidden;
+}
+
+.animated-background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: rgba(137, 207, 240, 0.7);
+    overflow: hidden;
+}
+
+.fish {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 165, 0, 0.8);
+    border-radius: 50%;
+    animation: swim 10s linear infinite;
+    opacity: 0.6;
+}
+
+.fish1 {
+    top: 20%;
+    left: 10%;
+    animation-duration: 8s;
+}
+
+.fish2 {
+    top: 50%;
+    left: 30%;
+    animation-duration: 12s;
+}
+
+.fish3 {
+    top: 80%;
+    left: 70%;
+    animation-duration: 10s;
+}
+
+@keyframes swim {
+    0% {
+        transform: translateX(0) scale(1);
+    }
+
+    50% {
+        transform: translateX(100vw) scale(1.2);
+    }
+
+    100% {
+        transform: translateX(-100vw) scale(1);
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calendar {
+    width: 90%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    padding-bottom: 10px;
+}
+
+.header .month {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.header .live-time {
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.btns {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    opacity: 0.8;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.weekdays,
+.days {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 15px;
+}
+
+.day {
+    width: calc(100% / 7 - 5px);
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.day:hover {
+    background: var(--accent-color);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+
+.popup {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+}
